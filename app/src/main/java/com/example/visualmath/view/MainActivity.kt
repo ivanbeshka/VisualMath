@@ -1,7 +1,8 @@
-package com.example.visualmath
+package com.example.visualmath.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.visualmath.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
