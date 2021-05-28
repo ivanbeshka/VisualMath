@@ -4,11 +4,14 @@ import androidx.room.*
 
 @Entity
 data class Theory(
-        @PrimaryKey override val id: Int,
-        @ColumnInfo(name = "name") override val name: String,
-//        @ColumnInfo(name = "content") val content: List<String>,
-        //todo bitmap
-        @ColumnInfo(name = "is_complete") override val isComplete: Boolean = false,
+        @PrimaryKey
+        override val id: Int,
+
+        @ColumnInfo(name = "name")
+        override val name: String,
+
+        @ColumnInfo(name = "is_complete")
+        override val isComplete: Boolean = false,
 ) : LearnItem
 
 @Dao

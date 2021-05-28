@@ -2,4 +2,12 @@
     <string name="app_name">VisualMath</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Начать</string>
+    <string name="next">Продолжить</string>
+    <string name="plus">Сложение</string>
+    <string name="knowing">Знакомство</string>
+    <string name="minus">Вычитание</string>
+    <string name="multiply">Умножение</string>
+    <string name="plus_1zn">Сложение однозначных чисел</string>
+    <string name="plus_2zn">Сложение двухзначных чисел</string>
 </resources>

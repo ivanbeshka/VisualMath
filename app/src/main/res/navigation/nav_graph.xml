@@ -10,9 +10,4 @@
         android:name="com.example.visualmath.view.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
-    <fragment
-        android:id="@+id/mainMenu"
-        android:name="com.example.visualmath.view.MainMenu"
-        android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" />
 </navigation>
