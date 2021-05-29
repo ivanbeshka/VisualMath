@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <net.paleogene.android.abacus.AbacusView
+        android:id="@+id/abacus"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="10"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+      
+    <TextView
+        android:id="@+id/readout"
+        android:gravity="center_horizontal|center_vertical"
+        android:text=""
+        android:textSize="16pt"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        />
+
+</LinearLayout>
