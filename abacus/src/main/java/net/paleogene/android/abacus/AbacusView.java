@@ -5,11 +5,18 @@ import java.util.concurrent.Semaphore;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import androidx.annotation.RequiresApi;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * View that draws, handles touch events for a visual abacus.
@@ -61,6 +68,7 @@ public class AbacusView extends SurfaceView
             }
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.M)
         @Override
         public void run() {
             while (!isInterrupted()) {
@@ -114,9 +122,16 @@ public class AbacusView extends SurfaceView
         holder.addCallback(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void doDraw(Canvas canvas) {
-        canvas.drawColor(Color.BLACK);
-        if (engine != null) engine.draw(canvas);
+
+        canvas.drawColor(context.getColor(R.color.background));
+
+
+        if (engine != null) {
+            canvas.rotate(-90, engine.getWidth() / 2, engine.getHeight() / 2);
+            engine.draw(canvas);
+        }
     }
 
     private void showReadout() {
@@ -144,7 +159,7 @@ public class AbacusView extends SurfaceView
                                int height) {
         mCanvasWidth = width;
         mCanvasHeight = height;
-        engine = new AbacusEngine(mCanvasWidth, mCanvasHeight, 6, context);
+        engine = new AbacusEngine(mCanvasWidth, mCanvasHeight, 10, context);
         if (beadState != null)
             engine.setState(beadState);
 
@@ -189,8 +204,8 @@ public class AbacusView extends SurfaceView
                     /* Process historical events so that beads don't "slip" */
                     /* TODO Try interpolating between such events too... */
                     for (int i = 0; i < event.getHistorySize(); i++) {
-                        x = (int) event.getHistoricalX(i);
-                        y = (int) event.getHistoricalY(i);
+                        x = (int) event.getHistoricalY(i);
+                        y = (int) event.getHistoricalX(i);
 
                         motionRow = engine.getRowAt(x, y);
                         if (motionRow != null) {

@@ -1,9 +1,11 @@
 package com.example.visualmath.view
 
 import android.os.Bundle
+import android.view.Window
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.room.Room
 import com.example.visualmath.R
@@ -23,7 +25,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.simple)
+        supportActionBar?.hide()
+        setContentView(R.layout.activity_main)
 
         db = Room.databaseBuilder(
             applicationContext,

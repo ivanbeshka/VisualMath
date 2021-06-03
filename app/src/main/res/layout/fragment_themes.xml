@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:outlineProvider="none"
         android:src="@drawable/girl"
-        android:translationZ="3dp"
+        android:translationZ="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -19,33 +19,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton2"
+        android:id="@+id/btn_plus"
         style="@style/ButtonStyle"
         android:layout_width="300dp"
         android:layout_height="86dp"
         android:text="@string/plus"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_multiply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/materialButton3"
+        app:layout_constraintStart_toEndOf="@+id/btn_knowing"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton3"
+        android:id="@+id/btn_knowing"
         style="@style/ButtonStyle"
         android:layout_width="300dp"
         android:layout_height="86dp"
         android:text="@string/knowing"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton5"
-        app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_minus"
+        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton4"
+        android:id="@+id/btn_multiply"
         style="@style/ButtonStyle"
         android:layout_width="300dp"
         android:layout_height="86dp"
@@ -54,21 +54,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/materialButton3"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton2" />
+        app:layout_constraintStart_toEndOf="@+id/btn_knowing"
+        app:layout_constraintTop_toBottomOf="@+id/btn_plus" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton5"
+        android:id="@+id/btn_minus"
         style="@style/ButtonStyle"
         android:layout_width="300dp"
         android:layout_height="86dp"
         android:text="@string/minus"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton3" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_knowing" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

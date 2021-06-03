@@ -33,11 +33,16 @@ public class AbacusEngine {
     private int beadWidth;
     private int borderWidth;
     private int rowWidth;
+    private int width;
+    private int height;
 
     public AbacusEngine(int width, int height, int numRows, Context context) {
 
         this.beadWidth = Math.min(height / (3 * numRows + 2), width / 12);
         this.beadHeight = 2 * beadWidth;
+
+        this.width = width;
+        this.height = height;
 
         this.numRows = numRows;
         this.rows = new RowEngine[numRows];
@@ -57,7 +62,7 @@ public class AbacusEngine {
             Point rowPosition = new Point();
             rowPosition.x = position.x + borderWidth;
             rowPosition.y = position.y + (1 + 3 * i) * beadHeight / 2 + borderWidth;
-            this.rows[i] = new RowEngine(rowPosition, beadWidth, beadHeight, beadDrawable);
+            this.rows[i] = new RowEngine(rowPosition, beadWidth, beadHeight, beadDrawable, res);
         }
 
         paint = new Paint();
@@ -147,5 +152,13 @@ public class AbacusEngine {
                 rows[i].moveBeadToInternal(j, (int) (beadState.positions[i][j] * rowWidth));
             }
         }
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }

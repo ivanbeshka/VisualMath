@@ -11,4 +11,5 @@
     <color name="background">#4F0080</color>
     <color name="button_background">#E1D0B7</color>
     <color name="button_text">#460171</color>
+    <color name="invisible">#00000000</color>
 </resources>

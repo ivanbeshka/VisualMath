@@ -1,5 +1,6 @@
 package net.paleogene.android.abacus;
 
+import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -42,12 +43,12 @@ public class RowEngine {
 
     private Drawable beadDrawable;
 
-    public RowEngine(Point position, int beadWidth, int beadHeight, Drawable bead) {
+    public RowEngine(Point position, int beadWidth, int beadHeight, Drawable bead, Resources res) {
         this.position = position;
         this.width = 11 * beadWidth;
         this.beadWidth = beadWidth;
         this.beadHeight = beadHeight;
-        this.numBeads = 9;
+        this.numBeads = 5;
         this.beadDrawable = bead;
 
         beadPaint = new Paint();
@@ -55,8 +56,7 @@ public class RowEngine {
         beadPaint.setStyle(Paint.Style.FILL);
 
         rowPaint = new Paint();
-        rowPaint.setColor(Color.argb(255, 188, 157, 118)); // brownish
-        //rowPaint.setColor(Color.argb(255, 112, 82, 46)); // brownish
+        rowPaint.setColor(res.getColor(R.color.abacus_brown)); // brownish
         rowPaint.setStyle(Paint.Style.FILL);
 
         /* Place the beads starting on the left... */
