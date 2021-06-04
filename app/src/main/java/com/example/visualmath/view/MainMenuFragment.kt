@@ -26,11 +26,11 @@ class MainMenuFragment : Fragment() {
         btnContinue = view.findViewById(R.id.btn_continue)
 
         btnStart.setOnClickListener {
-            findNavController().navigate(R.id.action_mainMenuFragment_to_themesFragment)
+            findNavController().navigate(R.id.themesFragment)
         }
 
         btnContinue.setOnClickListener {
-            //todo navigate to last lesson
+            findNavController().navigate(R.id.learnContainer)
         }
 
         return view

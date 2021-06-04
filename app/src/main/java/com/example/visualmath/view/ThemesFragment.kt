@@ -64,7 +64,7 @@ class ThemesFragment : Fragment() {
 
     private fun setClickListeners() {
         btnKnowing.setOnClickListener {
-            findNavController().navigate(R.id.learnSkeletFragment)
+            findNavController().navigate(R.id.learnContainer)
         }
 
         btnMultiply.setOnClickListener {
@@ -72,11 +72,11 @@ class ThemesFragment : Fragment() {
         }
 
         btnPlus.setOnClickListener {
-
+            findNavController().navigate(R.id.harderPlusMinusFragment)
         }
 
         btnMinus.setOnClickListener {
-
+//            findNavController().navigate(R.id.harderPlusMinusFragment)
         }
     }
 }

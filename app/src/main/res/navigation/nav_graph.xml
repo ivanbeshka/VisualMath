@@ -10,17 +10,31 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_themesFragment"
             app:destination="@id/themesFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_learnContainer"
+            app:destination="@id/learnContainer" />
     </fragment>
     <fragment
         android:id="@+id/themesFragment"
         android:name="com.example.visualmath.view.ThemesFragment"
         android:label="ThemesFragment" >
         <action
-            android:id="@+id/action_themesFragment_to_learnSkeletFragment"
-            app:destination="@id/learnSkeletFragment" />
+            android:id="@+id/action_themesFragment_to_harderPlusMinusFragment"
+            app:destination="@id/harderPlusMinusFragment" />
+        <action
+            android:id="@+id/action_themesFragment_to_learnContainer"
+            app:destination="@id/learnContainer" />
     </fragment>
     <fragment
-        android:id="@+id/learnSkeletFragment"
-        android:name="com.example.visualmath.view.LearnSkeletFragment"
-        android:label="LearnSkeletFragment" />
+        android:id="@+id/harderPlusMinusFragment"
+        android:name="com.example.visualmath.view.HarderPlusMinusFragment"
+        android:label="HarderPlusMinusFragment" >
+        <action
+            android:id="@+id/action_harderPlusMinusFragment_to_learnContainer"
+            app:destination="@id/learnContainer" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnContainer"
+        android:name="com.example.visualmath.view.learn.LearnContainer"
+        android:label="LearnContainer" />
 </navigation>
