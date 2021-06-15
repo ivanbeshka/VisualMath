@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.visualmath.R
+import com.example.visualmath.view.learn.LearnContainer
 import com.google.android.material.button.MaterialButton
 
 class MainMenuFragment : Fragment() {
@@ -30,7 +31,7 @@ class MainMenuFragment : Fragment() {
         }
 
         btnContinue.setOnClickListener {
-            findNavController().navigate(R.id.learnContainer)
+//            findNavController().navigate(R.id.learnContainer)
         }
 
         return view

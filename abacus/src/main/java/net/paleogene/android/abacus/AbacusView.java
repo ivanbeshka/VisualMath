@@ -71,23 +71,23 @@ public class AbacusView extends SurfaceView
         @RequiresApi(api = Build.VERSION_CODES.M)
         @Override
         public void run() {
+
+            Canvas c = null;
+            try {
+                c = mSurfaceHolder.lockCanvas(null);
+                synchronized (mSurfaceHolder) {
+                    doDraw(c);
+                }
+            } finally {
+                if (c != null) mSurfaceHolder.unlockCanvasAndPost(c);
+            }
+
             while (!isInterrupted()) {
                 try {
                     sem.acquire();
                 } catch (InterruptedException e) {
                     return;
                 }
-
-                Canvas c = null;
-                try {
-                    c = mSurfaceHolder.lockCanvas(null);
-                    synchronized (mSurfaceHolder) {
-                        doDraw(c);
-                    }
-                } finally {
-                    if (c != null) mSurfaceHolder.unlockCanvasAndPost(c);
-                }
-
                 sem.release();
             }
         }
@@ -126,7 +126,6 @@ public class AbacusView extends SurfaceView
     private void doDraw(Canvas canvas) {
 
         canvas.drawColor(context.getColor(R.color.background));
-
 
         if (engine != null) {
             canvas.rotate(-90, engine.getWidth() / 2, engine.getHeight() / 2);

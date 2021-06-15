@@ -22,20 +22,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton7"
+        android:id="@+id/btn_1zn_num"
         style="@style/ButtonStyle"
         android:layout_width="300dp"
         android:layout_height="86dp"
         android:text="@string/plus_1zn"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton6"
+        app:layout_constraintBottom_toTopOf="@+id/btn_2zn_num"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton6"
+        android:id="@+id/btn_2zn_num"
         style="@style/ButtonStyle"
         android:layout_width="300dp"
         android:layout_height="86dp"
@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton7" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_1zn_num" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

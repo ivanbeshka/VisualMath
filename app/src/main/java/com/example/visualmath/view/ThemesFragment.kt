@@ -37,6 +37,7 @@ class ThemesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        onCreate(savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_themes, container, false)
 
         initView(view)
@@ -46,7 +47,6 @@ class ThemesFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Log.d("themes", "onOptionsItemSelected: ")
         if (item.itemId == android.R.id.home) {
             (activity as AppCompatActivity).supportActionBar?.hide()
             activity?.onBackPressed()
@@ -64,7 +64,9 @@ class ThemesFragment : Fragment() {
 
     private fun setClickListeners() {
         btnKnowing.setOnClickListener {
-            findNavController().navigate(R.id.learnContainer)
+            val bundle = Bundle()
+            bundle.putString(typeKey, sample)
+            findNavController().navigate(R.id.learnContainer, bundle)
         }
 
         btnMultiply.setOnClickListener {
